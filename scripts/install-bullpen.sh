@@ -7,8 +7,8 @@ INSTALL_DIR="${INSTALL_DIR:-/usr/local/bin}"
 # Prefer Homebrew installation when brew is available
 if command -v brew &>/dev/null; then
   echo "Installing bullpen via Homebrew tap..."
-  brew tap BullpenFi/tap
-  brew install bullpen
+  HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_INSTALL_FROM_API=1 HOMEBREW_NO_ENV_HINTS=1 \
+    brew install bullpenfi/tap/bullpen
   echo "Installed: $(bullpen --version)"
   exit 0
 fi
