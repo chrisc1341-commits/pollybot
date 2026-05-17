@@ -44,6 +44,20 @@ makes them available as subcommands:
 | `bullpen predict <question>` | Generate a probability-weighted prediction |
 | `bullpen sentiment <ticker>` | Summarise market sentiment |
 
+## Login
+
+`bullpen login` uses the OAuth 2.0 device-code flow:
+
+1. A one-time code is displayed in the terminal
+2. Your browser opens `https://auth.bullpen.fi` automatically
+3. After you approve, credentials are saved to `~/.config/bullpen/credentials`
+
+To use a self-hosted auth server, set `BULLPEN_AUTH_HOST` before logging in:
+
+```sh
+BULLPEN_AUTH_HOST=https://auth.example.com bullpen login
+```
+
 ## Supported platforms
 
 | OS    | Architecture |
