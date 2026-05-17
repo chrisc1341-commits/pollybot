@@ -1,0 +1,22 @@
+name: portfolio-balances
+command: portfolio balances
+type: integration
+description: Fetch token balances across all linked wallets and chains
+
+chains:
+  - ethereum
+  - polygon
+  - base
+  - arbitrum
+  - optimism
+  - solana
+
+output:
+  format: table
+  columns:
+    - chain
+    - token
+    - balance
+    - value_usd
+
+auth: required

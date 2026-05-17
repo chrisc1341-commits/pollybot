@@ -1,0 +1,31 @@
+name: polymarket-discover
+command: polymarket discover
+type: integration
+description: List trending prediction markets on Polymarket
+
+args:
+  - name: --limit
+    type: integer
+    default: 10
+    description: Number of markets to return
+  - name: --category
+    type: string
+    required: false
+    description: Filter by category (e.g. crypto, politics, sports)
+  - name: --sort
+    type: string
+    default: volume
+    enum: [volume, liquidity, newest]
+    description: Sort order
+
+output:
+  format: table
+  columns:
+    - slug
+    - question
+    - yes_price
+    - no_price
+    - volume_24h
+    - closes_at
+
+auth: required

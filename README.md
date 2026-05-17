@@ -43,6 +43,9 @@ makes them available as subcommands:
 | `bullpen poll <topic>` | Create a market poll or prediction question |
 | `bullpen predict <question>` | Generate a probability-weighted prediction |
 | `bullpen sentiment <ticker>` | Summarise market sentiment |
+| `bullpen portfolio balances` | Fetch token balances across all linked wallets and chains |
+| `bullpen polymarket discover` | List trending prediction markets on Polymarket |
+| `bullpen polymarket buy <market> <outcome> <amount>` | Buy shares on a market outcome |
 
 ## Login
 

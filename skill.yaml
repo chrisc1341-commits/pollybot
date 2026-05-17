@@ -10,6 +10,12 @@ triggers:
     description: Generate a probability-weighted prediction
   - command: sentiment
     description: Summarise market sentiment for a ticker or topic
+  - command: portfolio balances
+    description: Fetch token balances across all linked wallets and chains
+  - command: polymarket discover
+    description: List trending prediction markets on Polymarket
+  - command: polymarket buy
+    description: Buy shares on a Polymarket prediction market outcome
 
 skills:
   - name: poll
@@ -18,3 +24,9 @@ skills:
     file: skills/predict.yaml
   - name: sentiment
     file: skills/sentiment.yaml
+  - name: portfolio-balances
+    file: skills/portfolio/balances.yaml
+  - name: polymarket-discover
+    file: skills/polymarket/discover.yaml
+  - name: polymarket-buy
+    file: skills/polymarket/buy.yaml
