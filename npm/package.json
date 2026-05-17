@@ -1,0 +1,16 @@
+{
+  "name": "@bullpenfi/cli",
+  "version": "0.1.83",
+  "description": "Bullpen CLI",
+  "homepage": "https://github.com/BullpenFi/bullpen-cli-releases",
+  "license": "MIT",
+  "bin": {
+    "bullpen": "bin/bullpen"
+  },
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

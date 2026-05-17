@@ -1,0 +1,21 @@
+name: poll
+description: Create a market poll or prediction question
+input:
+  - name: topic
+    description: The market topic or ticker to poll on
+    required: true
+prompt: |
+  You are a financial analyst creating a concise market poll.
+  Topic: {{topic}}
+
+  Generate a single clear poll question with 3-4 answer choices that
+  capture meaningfully different outcomes. Format:
+
+  Question: <question>
+  Options:
+    A) <option>
+    B) <option>
+    C) <option>
+    D) <option>  (optional)
+
+  Keep the question neutral and the options mutually exclusive.

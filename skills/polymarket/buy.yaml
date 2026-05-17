@@ -1,0 +1,33 @@
+name: polymarket-buy
+command: polymarket buy
+type: integration
+description: Buy shares on a Polymarket prediction market outcome
+
+args:
+  - name: market
+    positional: true
+    type: string
+    description: Market slug or ID (e.g. "will-btc-hit-150k")
+  - name: outcome
+    positional: true
+    type: string
+    enum: [Yes, No]
+    description: Outcome to buy shares on
+  - name: amount
+    positional: true
+    type: number
+    description: Amount to spend in USDC
+
+flags:
+  - name: --yes
+    type: boolean
+    default: false
+    description: Skip confirmation prompt
+
+confirmation:
+  required: true
+  bypass_flag: --yes
+  message: |
+    Buy {{outcome}} shares on "{{market}}" for {{amount}} USDC?
+
+auth: required
