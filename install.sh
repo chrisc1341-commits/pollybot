@@ -1,8 +1,8 @@
 #!/bin/sh
 set -eu
 
-BULLPEN_VERSION="0.1.83"
 INSTALL_DIR="${INSTALL_DIR:-/usr/local/bin}"
+RELEASES_API="https://api.github.com/repos/BullpenFi/bullpen-cli-releases/releases"
 
 detect_platform() {
   os="$(uname -s)"
@@ -35,9 +35,20 @@ need_cmd() {
   fi
 }
 
+resolve_version() {
+  if [ -n "${BULLPEN_VERSION:-}" ] && [ "$BULLPEN_VERSION" != "latest" ]; then
+    echo "$BULLPEN_VERSION"
+    return
+  fi
+  curl -fsSL "${RELEASES_API}/latest" \
+    | grep '"tag_name"' \
+    | sed 's/.*"tag_name"[[:space:]]*:[[:space:]]*"v\([^"]*\)".*/\1/'
+}
+
 need_cmd curl
 need_cmd tar
 
+BULLPEN_VERSION="$(resolve_version)"
 PLATFORM="$(detect_platform)"
 URL="https://github.com/BullpenFi/bullpen-cli-releases/releases/download/v${BULLPEN_VERSION}/bullpen-${BULLPEN_VERSION}-${PLATFORM}.tar.gz"
 TMP="$(mktemp -d)"
