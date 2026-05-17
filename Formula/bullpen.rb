@@ -1,6 +1,7 @@
 class Bullpen < Formula
-  desc "Bullpen CLI"
-  homepage "https://github.com/BullpenFi/bullpen-cli-releases"
+  desc "AI-powered CLI for prediction markets and portfolio management"
+  homepage "https://bullpen.fi"
+  license "MIT"
   version "0.1.83"
 
   on_macos do
@@ -27,6 +28,22 @@ class Bullpen < Formula
 
   def install
     bin.install "bullpen"
+  end
+
+  def caveats
+    <<~EOS
+      Get started in three steps:
+
+        1. Install AI skills:
+             bullpen skill install
+
+        2. Log in:
+             bullpen login
+
+        3. Try it:
+             bullpen portfolio balances
+             bullpen polymarket discover
+    EOS
   end
 
   test do
