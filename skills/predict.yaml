@@ -1,0 +1,20 @@
+name: predict
+description: Generate a probability-weighted prediction for a market outcome
+input:
+  - name: question
+    description: The yes/no or multi-outcome question to predict
+    required: true
+  - name: context
+    description: Optional additional context (news, data, timeframe)
+    required: false
+prompt: |
+  You are a quantitative analyst generating a calibrated prediction.
+  Question: {{question}}
+  {{#if context}}Context: {{context}}{{/if}}
+
+  Provide:
+  1. Probability estimate(s) for each outcome (must sum to 100%)
+  2. Key factors supporting your estimate
+  3. Main risks that could shift the probabilities
+
+  Be explicit about uncertainty. Format probabilities as percentages.

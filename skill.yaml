@@ -1,0 +1,20 @@
+name: pollybot
+version: 0.1.83
+description: AI-powered polling and prediction skill for Bullpen
+author: BullpenFi
+
+triggers:
+  - command: poll
+    description: Create a market poll or prediction question
+  - command: predict
+    description: Generate a probability-weighted prediction
+  - command: sentiment
+    description: Summarise market sentiment for a ticker or topic
+
+skills:
+  - name: poll
+    file: skills/poll.yaml
+  - name: predict
+    file: skills/predict.yaml
+  - name: sentiment
+    file: skills/sentiment.yaml

@@ -1,0 +1,22 @@
+name: sentiment
+description: Summarise market sentiment for a ticker or topic
+input:
+  - name: target
+    description: Ticker symbol or topic (e.g. AAPL, "Fed rate cuts")
+    required: true
+  - name: timeframe
+    description: Lookback window (e.g. "1d", "1w", "1m")
+    required: false
+    default: "1w"
+prompt: |
+  You are a market sentiment analyst.
+  Target: {{target}}
+  Timeframe: {{timeframe}}
+
+  Summarise the current market sentiment covering:
+  1. Overall sentiment: bullish / neutral / bearish (with confidence %)
+  2. Key drivers (max 3 bullet points)
+  3. Contrarian signals to watch
+  4. One-sentence takeaway
+
+  Be concise and data-driven. Avoid speculation beyond the stated timeframe.

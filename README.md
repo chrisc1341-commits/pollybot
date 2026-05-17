@@ -33,6 +33,17 @@ npm install -g @bullpenfi/cli
 curl -fsSL https://cli.bullpen.fi/install.sh | sh
 ```
 
+## Skills
+
+`bullpen skill install` fetches the skills defined in `skill.yaml` and
+makes them available as subcommands:
+
+| Command | Description |
+|---------|-------------|
+| `bullpen poll <topic>` | Create a market poll or prediction question |
+| `bullpen predict <question>` | Generate a probability-weighted prediction |
+| `bullpen sentiment <ticker>` | Summarise market sentiment |
+
 ## Supported platforms
 
 | OS    | Architecture |
